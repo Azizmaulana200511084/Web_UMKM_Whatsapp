@@ -1,0 +1,321 @@
+html,
+body {
+    width: 100%;
+    min-height: auto;
+    font-size: 25px;
+    font-family: 'kausuhan';
+    background-image: url("/aziz-maulana/gambar/wp2757880-wallpaper.gif.gif");
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    scroll-behavior: smooth;
+}
+
+#aziz-menu {
+    display: none;
+}
+
+label[for="aziz-menu"] {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(30, 0, 148);
+    border-radius: 15px;
+    border: 2px groove rgb(255, 255, 0);
+}
+
+.aziz-menu {
+    width: 30%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+    transform: translate(-110%);
+    z-index: 998;
+    background-color: rgb(30, 0, 148);
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+    border-right: 2px groove rgb(255, 255, 0);
+}
+
+.aziz-menu>ul {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    padding: 20px;
+    height: 1%;
+}
+
+.aziz-menu>ul>li {
+    font-size: 13px;
+    white-space: nowrap;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    color: rgb(30, 0, 148);
+}
+
+#aziz-menu:checked+label {
+    background-color: transparent;
+    border-color: rgb(255, 255, 0);
+}
+
+#aziz-menu:checked~div.aziz-menu {
+    transform: translate(0px);
+    visibility: visible;
+}
+
+.link-menusamping {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 997;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    transition: 500ms;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#aziz-menu:checked~div.link-menusamping {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+[for="aziz-menu"]>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    align-items: center;
+}
+
+.daftar-menu {
+    display: block;
+    width: 17px;
+    height: 2px;
+    margin: 10px 0 5px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    background-color: rgb(255, 255, 0);
+    transition: 500ms;
+    transform-origin: right center;
+}
+
+[for="aziz-menu"]>div>span:nth-child(4),
+[for="aziz-menu"]>div>span:nth-child(5),
+[for="aziz-menu"]>div>span:nth-child(6) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    transform-origin: left center;
+}
+
+#aziz-menu:checked+label span {
+    background-color: rgb(255, 255, 0);
+}
+
+#aziz-menu:checked+label span:nth-child(2),
+#aziz-menu:checked+label span:nth-child(5) {
+    transform: scale(0);
+}
+
+#aziz-menu:checked+label span:nth-child(1) {
+    transform: translateY(17px) rotate(45deg);
+}
+
+#aziz-menu:checked+label span:nth-child(4) {
+    transform: translateY(17px) rotate(-45deg);
+}
+
+#aziz-menu:checked+label span:nth-child(3) {
+    transform: translateY(-17px) rotate(-45deg);
+}
+
+#aziz-menu:checked+label span:nth-child(6) {
+    transform: translateY(-17px) rotate(45deg);
+}
+
+a {
+    font-size: 18px;
+    font-family: 'kausuhan';
+    display: inline;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 7px;
+    color: white;
+}
+
+.azizlogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 50%;
+}
+
+h1 {
+    text-align: center;
+    background-color: rgb(30, 0, 148);
+    color: white;
+    font-style: italic;
+    font-family: 'autum';
+    font-size: 40px;
+    border: 5px blue groove;
+    margin-left: 0%;
+    margin-right: 0%;
+    scroll-behavior: smooth;
+}
+
+#wrap {
+    margin-left: 0%;
+    margin-right: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+    scroll-behavior: smooth;
+}
+
+#scaled-frame {
+    width: 100%;
+    height: 3000px;
+    margin-left: 0%;
+    margin-right: 0%;
+    zoom: 1.0;
+    -moz-transform: scale(1.0);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(1.0);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(1.0);
+    -webkit-transform-origin: 0 0;
+    scroll-behavior: smooth;
+}
+.footer-content {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(30, 0, 148);
+    color: #fff;
+    text-align: center;
+    bottom: 0pt;
+    font-size:x-small;
+    z-index: 1000; 
+}
+
+@media (min-width: 400px) and (max-width: 1300px) {
+    h1 {
+        width: auto;
+        font-size: 25px;
+        margin-left: 0%;
+        margin-right: 0%;
+        padding-left: 0%;
+        padding-right: 0%;
+        scroll-behavior: smooth;
+        margin-top: 20px;
+    }
+    #scaled-frame {
+        width: 106%;
+        height: 999999999999999px;
+        display: flex;
+        border: 0px;
+        margin-left: 0%;
+        margin-right: 0%;
+        padding-left: 0%;
+        padding-right: 0%;
+        zoom: 0.95;
+        -moz-transform: scale(0.95);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.95);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.95);
+        -webkit-transform-origin: 0 0;
+        scroll-behavior: smooth;
+    }
+    a {
+        width: auto;
+        font-size: auto;
+    }
+    .azizlogo {
+        width: 40%;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 992px) {
+    h1 {
+        width: auto;
+        font-size: 25px;
+        margin-left: 0%;
+        margin-right: 0%;
+        padding-left: 0%;
+        padding-right: 0%;
+        scroll-behavior: smooth;
+        margin-top: 20px;
+    }
+    #wrap {
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
+        padding-left: 0%;
+        padding-right: 0%;
+        scroll-behavior: smooth;
+    }
+    #scaled-frame {
+        width: 303%;
+        height: 999999999999999px;
+        border: 0px;
+        margin-left: 0%;
+        margin-right: 0%;
+        padding-left: 0%;
+        padding-right: 0%;
+        display: flex;
+        zoom: 0.33;
+        -moz-transform: scale(0.33);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.33);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.33);
+        -webkit-transform-origin: 0 0;
+        scroll-behavior: smooth;
+    }
+    .aziz-menu {
+        width: 60%;
+        font-size: auto;
+    }
+    .azizlogo {
+        width: 30%;
+    }
+    a {
+        font-size: auto;
+    }
+}
+
+@font-face {
+    font-family: "autum";
+    src: url('/aziz-maulana/font/autum.otf');
+}
+
+@font-face {
+    font-family: "kausuhan";
+    src: url('/aziz-maulana/font/kausuhan.otf');
+}
+
+@font-face {
+    font-family: "selena";
+    src: url('/aziz-maulana/font/Selena.ttf');
+}

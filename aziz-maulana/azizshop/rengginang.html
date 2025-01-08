@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Cikulak Kidul</title>
+    <style>img[alt="www.000webhost.com"]{display:none;}</style>
+    <link rel="icon" href="/aziz-maulana/gambar/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/aziz-maulana/css/shop.css">
+    <style>
+        .order-form {
+            display: none;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="aziz-menu">
+    <label for="aziz-menu">
+        <div class="aku">
+            <span class="daftar-menu"></span>
+            <span class="daftar-menu"></span>
+            <span class="daftar-menu"></span>
+            <span class="daftar-menu"></span>
+            <span class="daftar-menu"></span>
+            <span class="daftar-menu"></span>
+        </div>
+    </label>
+
+    <div class="link-menusamping"></div>
+    <div class="aziz-menu">
+        <ul>
+            <img src="/aziz-maulana/gambar/logo.png" class="azizlogo"><br>
+            <li><a href="/index.html">Beranda</a></li>
+            <li><a href="/aziz-maulana/pages/profiledesa.html">Profile Desa</a></li>
+            <li><a href="/aziz-maulana/pages/about.html">about</a></li>
+        </ul>
+    </div>
+
+    <br><br><br>
+    <div class="toko">
+        <div class="nama">
+            <div dir="rtl" trbidi="on" class="judul">
+                <p><img src="/aziz-maulana/gambar/shop/rengginang.jpeg">
+                    <h1>Rengginang</h1>
+                    <p class='p2'><b>Penjual :</b> Ibu Warsinah</p>
+                </p><br>
+                <div class="harga">
+                    <i><b style="font-size: 15px;">HEMAT Rp 2000</b></i><br>
+                    <i><b style="text-decoration: line-through;">RP 12.000</b></i> - <i><b>RP 10.000</b></i>
+                </div>
+                <div>
+                    <!-- Button to show the order form -->
+                    <button class="klik" id="showForm">Pesan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-form">
+        <form action="https://api.whatsapp.com/send" method="get">
+            <!-- WhatsApp number and default text -->
+            <input type="hidden" name="phone" value="+6283892820119">
+            <!-- Include product name, customer name, address, and order quantity in the text message -->
+            <input type="hidden" name="text" id="waText" value="Saya memesan Rengginang dengan total harga RP 0">
+
+            <!-- Product name and user input fields -->
+            <center><h1>Rengginang</h1></center>
+
+            <label for="nama">Masukan Nama Anda:</label>
+            <input type="text" id="nama" name="nama" required><br>
+
+            <label for="alamat">Alamat Anda:</label>
+            <input type="text" id="alamat" name="alamat" required><br>
+
+            <label for="jumlah">Jumlah Pesanan:</label>
+            <input type="number" id="jumlah" name="jumlah" required onchange="calculateTotal()"><br>
+
+            <!-- Total price based on quantity -->
+            <p>Total Harga: <span id="totalHarga">Rp. 0</span></p>
+
+            <!-- Submit button -->
+            <button type="submit" class="klik">Pesan Sekarang</button>
+        </form>
+    </div>
+
+    <div class="deskripsi">
+        <br>
+        <h1 class="desk1"><u>Deskripsi</u></h1>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nikmati kelezatan sejati dengan Mie Gacoan! Rasakan sensasi gurihnya mie instan terbaik dalam setiap gigitan, Goyang lidah Anda dengan Mie Gacoan. Hidangan cepat yang penuh rasa Looh!, Kelezatan tak pernah semudah ini! Mie Gacoan hadir untuk memenuhi selera Anda kapan saja, di mana saja.
+        </p>
+    </div>
+
+    <br>
+
+    <script>
+        // JavaScript to show the order form when the button is clicked
+        const showFormButton = document.getElementById('showForm');
+        const orderForm = document.querySelector('.order-form');
+
+        showFormButton.addEventListener('click', () => {
+            // Toggle the form's visibility
+            if (orderForm.style.display === 'none') {
+                orderForm.style.display = 'block';
+                showFormButton.innerText = 'Sembunyikan Form';
+            } else {
+                orderForm.style.display = 'none';
+                showFormButton.innerText = 'Pesan';
+            }
+        });
+
+        // JavaScript to calculate total price based on quantity
+        function calculateTotal() {
+            const quantity = document.getElementById('jumlah').value;
+            const pricePerItem = 10000;
+            const total = quantity * pricePerItem;
+            document.getElementById('totalHarga').textContent = 'Rp. ' + total.toLocaleString('id-ID');
+
+            // Update the WhatsApp text with the product name, customer name, address, and order quantity
+            const productName = "Rengginang";
+            const customerName = document.getElementById('nama').value;
+            const customerAddress = document.getElementById('alamat').value;
+            const orderQuantity = document.getElementById('jumlah').value;
+            document.getElementById('waText').value = `Saya memesan ${productName} sebanyak ${orderQuantity} dengan total harga RP ${total.toLocaleString('id-ID')}. Nama: ${customerName}, Alamat: ${customerAddress}`;
+        }
+    </script>
+
+</body>
+
+</html>
